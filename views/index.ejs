@@ -1,0 +1,278 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="icon" href="/images/icon.png" type="image/png"/>
+	<link rel="shortcut icon" href="/images/icon.png" type="image/png"/>
+	<link type="image/x-icon" rel="icon" href="/images/icon.png"/>
+	<title>CollabCode - <%= roomName %></title>
+	<meta name="robots" content="index,follow"/>
+	<meta name="googlebot" content="index,follow"/>
+	<meta name="description" content="Share text between browser windows in real time"/>
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:site" content="@rexthony"/>
+	<meta name="twitter:creator" content="@rexthony"/>
+	<meta property="twitter:image" content="/images/twitter-card.png"/>
+	<meta property="twitter:title" content="Share TXT"/>
+	<meta property="og:url" content="http://sharetxt.live/"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Share text between browser windows in real time"/>
+	<meta property="og:description" content="Share text between browser windows in real time."/>
+	<meta property="og:image" content="/images/twitter-card.png"/>
+	<meta property="og:site_name" content="Share TXT"/>
+	<meta property="og:locale" content="en_US"/>
+	<link rel="canonical" href="http://sharetxt.live/"/>
+	<meta name="next-head-count" content="18"/>
+	<link type="text/css" rel="stylesheet" href="/css/index.css"/>
+	<script type="text/javascript" src="/js/util.js"></script>
+	<script type="text/javascript" src="/js/dictionary.js"></script>
+	<script type="text/javascript" src="/js/translate.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
+	<script>
+		const ROOM_NAME = "<%= roomName %>";
+		const LANG = "<%= lang %>";
+	</script>
+	<script async src="https://cdn.splitbee.io/sb.js"></script>
+	<script async defer data-domain='sharetxt.live' src='https://pageinsight.herokuapp.com/js/pageinsight.js'></script>
+</head>
+
+<body>
+	<div id="container" class="custom-lm-container">
+		<div id="mainBg">
+			<div class="custom-responsive-container custom-nav-height">
+				<table class="rex-height-100pp rex-width-100pp">
+					<tr>
+						<td class="rex-width-40px">
+							<a href="http://localhost:3000">
+								<img src="/images/icon.png" class="custom-icon-size rex-width-40px rex-height-40px rex-display-table-cell rex-vertical-align rex-mr-16px">
+							</a>
+						</td>
+						<td>
+							<span id="appName" class="rex-weight-bold rex-vertical-align rex-fs-x-large rex-text-overflow-ellipses rex-mr-16px">CollabCode</span>
+							<span id="appVersion" class="rex-fs-xx-small rex-nowrap">v 2.0.0</span>
+						</td>
+						<td class="rex-width-0px rex-text-align-right">
+							<div class="rex-display-inline-block rex-nowrap">
+								<label for="customToggleLightSwitch">
+									<span id="colorTheme" class="rex-fs-normal custom-lm-mode-color rex-mr-8px rex-vertical-align rex-hover" translate>Light mode</span>
+								</label>
+								<label class="rex-toggle-switch rex-vertical-align rex-mr-8px">
+									<input id="customToggleLightSwitch" type="checkbox">
+									<span class="rex-toggle-switch-slider rex-toggle-switch-round"></span>
+								</label>
+								<span class="custom-border-left">
+
+									<div id="languageToggle" class="rex-cd-dropdown">
+										<span class="rex-cd-dropbtn rex-curDiv-8px rex-vertical-align-span rex-pad8px12px rex-hover">
+											<span id="selectedLang" class="rex-fs-normal rex-vertical-align">
+												EN
+											</span>
+										</span>
+										<div id="languageToggleDropdown" class="rex-cd-dropdown-content-min">
+											<span class="custom-dropdown-content rex-fs-normal rex-display-block rex-pad12px16px rex-selectable-item-background rex-hover">EN</span>
+											<span class="custom-dropdown-content rex-fs-normal rex-display-block rex-pad12px16px rex-selectable-item-background rex-hover rex-item-selected">FR</span>
+											<span class="custom-dropdown-content rex-fs-normal rex-display-block rex-pad12px16px rex-selectable-item-background rex-hover">TW</span>
+										</div>
+									</div>
+
+
+								</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="custom-display-grid rex-display-grid2">
+				<div class="custom-hero-container custom-display-height custom-responsive-container">
+					<p id="headline" class="custom-hero-text rex-fs-normal rex-mt-32px rex-lh-normal rex-width-70pp" translate>Visit this website on two devices or browser windows. Enter your text in the field to share.</p>
+
+					<div id="clientsLabel" class="rex-mt-32px">
+						<span id="numConnections" class="rex-weight-bold">0 clients</span> <span translate>connected in</span> <span id="roomName" class="rex-weight-bold rex-hover rex-mr-8px custom-path">default</span><img id="redirectIcon" src="/images/ic_redirect.png" class="custom-redirect">
+					</div>
+
+					<div class="rex-mt-32px rex-width-70pp custom-claim-link-container-grid">
+						<div class="rex-pl-16px rex-pt-16px rex-pb-16px custom-border-2px-primary rex-nowrap">
+							<span id="claimLinkShareTXT" class="rex-fs-normal rex-weight-bold rex-vertical-align-span">CollabCode.live/</span>
+							<input id="claimLinkShareTXTInput" type="text" placeholder="name" class="rex-fs-normal custom-my-link-input rex-weight-bold">
+						</div>
+						<div id="btnClaimMyLink" class="custom-claim-my-link-btn rex-display-flex rex-center-flex-items custom-editor-btn rex-hover">
+							<span class="rex-fs-normal rex-color-white" translate>Claim my link</span>
+						</div>
+					</div>
+				</div>
+				<div id="editorBg" class="custom-display-height">
+					<div class="custom-editor-input-height">
+						<textarea id="inputField" placeholder="Type or paste text to share." class="rex-fs-normal rex-lh-normal rex-width-100pp rex-height-100pp rex-noresize custom-input-field-container rex-pt-8px rex-background-transparent rex-no-border"></textarea>
+					</div>
+					<div id="copyBtn" class="custom-editor-btn-height custom-editor-btn rex-hover rex-display-flex rex-center-flex-items">
+						<span id="copyBtnContent" class="rex-color-white rex-fs-large rex-weight-bold" translate>Copy to clipboard</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalBackground" class="rex-modal-background custom-modal-background">
+			<div class="custom-modal"> <!-- go to redirect modal -->
+				<div id="gotoHeader" class="rex-height-40px custom-lm-modal-nav-background-color custom-lm-modal-nav-color rex-display-flex rex-center-flex-items rex-weight-bold" translate>Go to</div>
+				<div id="gotoBodyBg" class="rex-pad16px">
+					<table class="rex-width-100pp rex-mt-32px">
+						<tr>
+							<td class="rex-width-0">
+								<span class="custom-color">http://CollabCode.live/</span>
+							</td>
+							<td>
+								<input type="text" id="pathUrl" class="rex-width-100pp rex-fs-normal custom-lm-modal-input">
+							</td>
+						</tr>
+					</table>
+					<div class="rex-text-align-right rex-mt-32px">
+						<button id="gotoUrl" class="rex-btn-primary rex-fs-normal rex-nowrap" translate>Go to url</button>
+					</div>
+				</div>
+			</div>
+			<form id="signupBg" class="custom-modal rex-pad32px rex-overflow-auto"> <!-- sign up modal -->
+				<h1 id="signupLabel" class="rex-fs-large">Sign up</h1>
+				<input id="signupEmailInput" type="email" placeholder="Email" class="custom-signup-form-input rex-width-100pp rex-pad8px rex-fs-normal rex-mt-32px" required>
+				<p id="signupEmailInputError" class="rex-color-danger rex-fs-x-small rex-mt-8px" hidden>Enter your email</p>
+
+				<div id="custom-signup-form-name-container" class="custom-signup-form-name-container rex-mt-16px custom-claim-link-signup-container-grid rex-pad8px rex-border">
+					<div class="rex-nowrap">
+						<span class="rex-fs-normal rex-vertical-align-span">CollabCode.live/</span>
+						<input id="signupClaimLinkShareTXTInput" type="text" placeholder="name" class="rex-fs-normal custom-my-link-input" required>
+					</div>
+					<div class="rex-display-flex rex-center-flex-items">
+						<img id="signupFormNameIcon" src="/images/ic_checkmark.png" class="rex-width-16px rex-height-16px" hidden>
+					</div>
+				</div>
+				<p id="signupFormNameError" class="rex-color-danger rex-fs-x-small rex-mt-8px" hidden>Name is already taken</p>
+
+				<input id="signupPasswordInput" type="password" placeholder="Password" class="custom-signup-form-input rex-width-100pp rex-pad8px rex-fs-normal rex-mt-16px" value="" required>
+				<p id="signupPasswordInputError" class="rex-color-danger rex-fs-x-small rex-mt-8px" hidden>Password must be greater than 3 characters</p>
+
+				<div id="btnSignup" class="rex-center-text rex-color-white custom-editor-btn rex-no-border rex-pad8px rex-mt-24px rex-width-100pp rex-fs-normal rex-hover">
+					<span>SIGN UP WITH EMAIL</span>
+					<img src="/images/ic_loading.gif" class="rex-width-30px rex-height-30px" hidden>
+				</div>
+
+				<div class="custom-text rex-center-text rex-fs-small rex-color-gray rex-mt-32px">
+					Or
+				</div>
+
+				<div id="btnSignupGoogle" class="custom-signup-type rex-center-text rex-pad8px rex-mt-16px rex-hover rex-selectable-item-background">
+					<img src="/images/ic_google.png" class="rex-width-20px rex-height-20px rex-mr-4px rex-vertical-align">
+					<span class="rex-fs-small">Signup with Google</span>
+				</div>
+
+				<div id="btnSignupFacebook" class="custom-signup-type rex-center-text rex-pad8px rex-mt-16px rex-hover rex-selectable-item-background">
+					<img src="/images/ic_facebook.png" class="rex-width-20px rex-height-20px rex-mr-4px rex-vertical-align">
+					<span class="rex-fs-small">Signup with Facebook</span>
+				</div>
+
+				<div id="btnSignupTwitter" class="custom-signup-type rex-center-text rex-pad8px rex-mt-16px rex-hover rex-selectable-item-background">
+					<img src="/images/ic_twitter.png" class="rex-width-20px rex-height-20px rex-mr-4px rex-vertical-align">
+					<span class="rex-fs-small">Signup with Twitter</span>
+				</div>
+
+				<div class="custom-text rex-center-text rex-pad8px rex-fs-small rex-color-gray rex-mt-32px">
+					Already have an account? <span id="btnSignupFormLogin" class="rex-weight-bold rex-hover rex-underline">Log in</span>
+				</div>
+			</form>
+			<div class="custom-modal rex-center-text"> <!-- loading modal -->
+				<img src="/images/ic_loading.gif" class="rex-width-70px rex-height-70px">
+			</div>
+			<form id="loginBg" class="custom-modal rex-pad32px rex-overflow-auto"> <!-- login modal -->
+				<h1 id="loginLabel" class="rex-fs-large">Log in</h1>
+				<input id="loginEmailInput" type="email" placeholder="Email" class="custom-signup-form-input rex-width-100pp rex-pad8px rex-fs-normal rex-mt-32px" required>
+				<p id="loginEmailInputError" class="rex-color-danger rex-fs-x-small rex-mt-8px" hidden>Enter your email</p>
+
+				<input id="loginPasswordInput" type="password" placeholder="Password" class="custom-signup-form-input rex-width-100pp rex-pad8px rex-fs-normal rex-mt-16px" value="" required>
+				<p id="loginPasswordInputError" class="rex-color-danger rex-fs-x-small rex-mt-8px" hidden>Password must be greater than 3 characters</p>
+
+				<div id="btnForgottenPassword" class="rex-fs-small rex-mt-24px custom-text rex-hover">
+					Forgotten password?
+				</div>
+
+				<div id="btnLogin" class="rex-center-text rex-color-white custom-editor-btn rex-pad8px rex-mt-24px rex-width-100pp rex-fs-normal rex-hover">
+					<span>LOG IN WITH EMAIL</span>
+				</div>
+
+				<div class="custom-text rex-center-text rex-fs-small rex-color-gray rex-mt-32px">
+					Or
+				</div>
+
+				<div id="btnLoginGoogle" class="custom-signup-type rex-center-text rex-pad8px rex-mt-16px rex-hover rex-selectable-item-background">
+					<img src="/images/ic_google.png" class="rex-width-20px rex-height-20px rex-mr-4px rex-vertical-align">
+					<span class="rex-fs-small">Log in with Google</span>
+				</div>
+
+				<div id="btnLoginFacebook" class="custom-signup-type rex-center-text rex-pad8px rex-mt-16px rex-hover rex-selectable-item-background">
+					<img src="/images/ic_facebook.png" class="rex-width-20px rex-height-20px rex-mr-4px rex-vertical-align">
+					<span class="rex-fs-small">Log in with Facebook</span>
+				</div>
+
+				<div id="btnLoginTwitter" class="custom-signup-type rex-center-text rex-pad8px rex-mt-16px rex-hover rex-selectable-item-background">
+					<img src="/images/ic_twitter.png" class="rex-width-20px rex-height-20px rex-mr-4px rex-vertical-align">
+					<span class="rex-fs-small">Log in with Twitter</span>
+				</div>
+
+				<div class="custom-text rex-center-text rex-pad8px rex-fs-small rex-color-gray rex-mt-32px">
+					Don't have an account? <span id="btnLoginFormSignup" class="rex-weight-bold rex-hover rex-underline">Sign up</span>
+				</div>
+			</form>
+			<form id="forgottenPasswordBg" class="custom-modal rex-pad32px rex-overflow-auto"> <!-- forgotten password modal -->
+				<h1 id="forgottenPasswordLabel" class="rex-fs-large">Forgotten Password?</h1>
+
+				<div id="forgottenPasswordMessage" class="custom-text rex-fs-small rex-mt-24px custom-text rex-lh-normal">
+					Enter your registered email address. We will send you an email to reset your password.
+				</div>
+
+				<input id="forgottenPasswordInput" type="email" placeholder="Email" class="custom-signup-form-input rex-width-100pp rex-pad8px rex-fs-normal rex-mt-32px" required>
+				<p id="forgottenPasswordInputError" class="rex-color-danger rex-fs-x-small rex-mt-8px" hidden>Enter your email</p>
+
+				<div id="btnResolveForgottenPassword" class="rex-center-text rex-color-white custom-editor-btn rex-pad8px rex-mt-24px rex-width-100pp rex-fs-normal rex-hover">
+					SEND RESET CODE
+				</div>
+			</form>
+			<form id="confirmEmailBg" class="custom-modal rex-pad32px rex-overflow-auto"> <!-- confirm email modal -->
+				<h1 id="confirmEmailLabel" class="rex-fs-large">Verify your email address</h1>
+
+				<div class="custom-text rex-fs-small rex-mt-24px custom-text rex-lh-normal">
+					An email was sent to you at <b id="confirmEmailReceipient">rexthonyy@gmail.com</b>. Enter the code in the field below
+				</div>
+
+				<input id="confirmEmailInput" type="number" placeholder="code" class="custom-signup-form-input rex-width-100pp rex-pad8px rex-fs-normal rex-mt-32px" required>
+				<p id="confirmEmailInputError" class="rex-color-danger rex-fs-x-small rex-mt-8px" hidden>Incorrect code</p>
+
+				<div id="btnVerifyEmail" class="rex-center-text rex-color-white custom-editor-btn rex-pad8px rex-mt-24px rex-width-100pp rex-fs-normal rex-hover">
+					VERIFY EMAIL
+				</div>
+
+				<div class="custom-text rex-pad8px rex-fs-small rex-mt-32px">
+					Didn't get the code? <span id="confirmEmailResendCode" class="rex-weight-bold rex-hover rex-underline">Resend code</span>
+				</div>
+			</form>
+			<form id="changePasswordBg" class="custom-modal rex-pad32px rex-overflow-auto"> <!-- change password -->
+				<h1 id="changePasswordLabel" class="rex-fs-large">Change Password</h1>
+
+				<input id="changePasswordInput" type="password" placeholder="New Password" class="custom-signup-form-input rex-width-100pp rex-pad8px rex-fs-normal rex-mt-32px" required>
+				<p id="changePasswordInputError" class="rex-color-danger rex-fs-x-small rex-mt-8px" hidden>Error</p>
+
+				<div id="btnChangePassword" class="rex-center-text rex-color-white custom-editor-btn rex-pad8px rex-mt-24px rex-width-100pp rex-fs-normal rex-hover">
+					UPDATE PASSWORD
+				</div>				
+			</form>
+			<div id="notificationBg" class="custom-modal rex-pad32px rex-overflow-auto"> <!-- notification password -->
+				<h1 id="notificationLabel" class="rex-fs-large">Success</h1>
+
+				<div id="notificationBody" class="custom-text rex-fs-small rex-mt-24px custom-text rex-lh-normal">
+					Your password has been changed successfully!
+				</div>
+
+				<div id="btnNotificationProceed" class="rex-center-text rex-color-white custom-editor-btn rex-pad8px rex-mt-24px rex-width-100pp rex-fs-normal rex-hover">
+					<span>PROCEED</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

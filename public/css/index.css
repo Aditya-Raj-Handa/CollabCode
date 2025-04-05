@@ -1,0 +1,1014 @@
+@import 'rex.css';
+@import 'rex-size.css';
+@import 'rex-color.css';
+@import 'rex-background.css';
+@import 'rex-font-size.css';
+@import 'rex-margin.css';
+@import 'rex-padding.css';
+@import 'rex-border.css';
+@import 'rex-display.css';
+@import 'rex-alignment.css';
+@import 'rex-dom.css';
+@import 'rex-toggle-switch.css';
+@import 'rex-clickable-dropdown.css';
+@import 'rex-scrollbar.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body{
+	font-family: 'Inter', sans-serif;
+}
+
+textarea{
+	font-family: 'Inter', sans-serif;
+}
+
+/*General*/
+.custom-responsive-container{
+	padding: 0 32px;
+}
+
+.custom-input-field-container{
+	padding: 32px;
+}
+
+.custom-nav-height{
+	height: 70px;
+}
+
+.custom-display-height{
+	height: calc(100vh - 70px);
+}
+
+.custom-redirect{
+	display: none;
+}
+.custom-path:hover + .custom-redirect{
+	display: inline;
+	width: 14px;
+	height: 14px;
+}
+
+.custom-editor-input-height{
+	height: calc(100% - 70px);
+}
+
+.custom-editor-btn-height{
+	height: 70px;
+}
+
+.custom-modal-background{
+	display: none;
+	/* display: flex; */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.custom-modal{
+	display: none;
+	width: 400px;
+}
+
+/* .custom-modal:first-child{
+	display: block;
+} */
+
+.custom-color{
+	color: rgb(71, 190, 185);
+}
+
+/*The copy button*/
+.custom-editor-btn{
+	background-color: rgb(71, 190, 185);
+}
+
+.custom-editor-btn:hover{
+	background-color: rgb(89, 234, 227);
+	transition: .3s;
+}
+
+.custom-editor-btn:disabled{
+	background-color: rgba(71, 190, 184, 0.418);
+}
+
+.custom-border-left{
+	border-left: 1px solid rgb(80, 80, 80);
+}
+
+.custom-claim-link-container-grid{
+	display: grid;
+	grid-template-columns: auto 150px;
+	grid-template-rows: auto;
+}
+
+.custom-border-2px-primary{
+	border-left: 2px solid rgb(71, 190, 185);
+	border-top: 2px solid rgb(71, 190, 185);
+	border-bottom: 2px solid rgb(71, 190, 185);
+}
+
+.custom-my-link-input{
+	background-color: transparent;
+	border: 0;
+	outline: none;
+	width: calc(100% - 110px);
+}
+
+.custom-claim-link-signup-container-grid{
+	display: grid;
+	grid-template-columns: auto 30px;
+	grid-template-rows: auto;
+}
+
+/* .custom-signup-type:hover{
+	transform: scale(105%);
+	transition: .3s;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Light mode : Background color of the whole screen*/
+.custom-lm-container div#mainBg{
+	height: 100vh;
+	background-color: rgb(246, 251, 238);
+}
+
+/* Light mode : app name */
+.custom-lm-container div#mainBg div table tr td #appName{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode: app version */
+.custom-lm-container div#mainBg div table tr td #appVersion{
+	color: rgb(141, 216, 205);
+}
+
+/* Light mode : theme label color */
+.custom-lm-container div#mainBg div table tr td div label #colorTheme{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : selected language color */
+.custom-lm-container div#mainBg div table tr td div span div span span#selectedLang{
+	color: rgb(22, 6, 71);
+	padding-bottom: 4px;
+	border-bottom: 1px dashed rgb(22, 6, 71);
+}
+
+/* Light mode : selected language dropdown background color */
+.custom-lm-container div#mainBg div table tr td div span div div#languageToggleDropdown{
+	background-color: white;
+}
+
+/* Light mode : selected language dropdown content color */
+.custom-lm-container div#mainBg div table tr td div span div div#languageToggleDropdown span{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : headline color */
+.custom-lm-container div#mainBg div div p#headline{
+	color: rgb(22, 6, 71);
+}
+
+/* Dark mode : number of connections container */
+.custom-lm-container div#mainBg div div div#clientsLabel{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : number of connections label */
+.custom-lm-container div#mainBg div div div span#numConnections{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : rooms name label */
+.custom-lm-container div#mainBg div div div span#roomName{
+	color: rgb(22, 6, 71);
+}
+
+/*Light mode : claim link sharetxt link*/
+.custom-lm-container div#mainBg div div div div span#claimLinkShareTXT{
+	color: rgb(22, 6, 71);
+}
+
+/*Light mode : claim link sharetxt input*/
+.custom-lm-container div#mainBg div div div div input#claimLinkShareTXTInput{
+	color: rgb(22, 6, 71);
+	margin-left: -4px;
+}
+
+/* Light mode : textarea background*/
+.custom-lm-container div#mainBg div div#editorBg{
+	background-color: rgb(228, 248, 243);
+}
+
+/* Light mode : gotomodal header*/
+.custom-lm-container div div div#gotoHeader{
+	background-color: rgb(71, 190, 185);
+	color: white;
+}
+
+/* Light mode : gotoBodyBg header*/
+.custom-lm-container div div div#gotoBodyBg{
+	background-color: rgb(246, 251, 238);
+}
+
+/* Light mode : goto path url*/
+.custom-lm-container div div div#gotoBodyBg table tr td input#pathUrl{
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid rgb(80, 80, 80);
+}
+
+/* Light mode : goto button*/
+.custom-lm-container div div div#gotoBodyBg div button#gotoUrl{
+	padding: 8px 16px;
+	background-color: transparent;
+	border: 0;
+	letter-spacing: 2px;
+	color: rgb(71, 190, 185);
+}
+
+/* Light mode : goto button hover */
+.custom-lm-container div div div#gotoBodyBg div button#gotoUrl:hover{
+	cursor: pointer;
+	background-color: rgb(240, 240, 240);
+}
+
+/* Light mode : sign up form background*/
+.custom-lm-container div form#signupBg{
+	background-color: rgb(246, 251, 238);
+}
+
+/* Light mode : signup form label*/
+.custom-lm-container div form#signupBg h1#signupLabel{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : signup form input*/
+.custom-lm-container div form#signupBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/* Light mode : signup form input*/
+.custom-lm-container div form#signupBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #FF6A00;
+}
+
+.custom-lm-container div form#signupBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #31C600;
+}
+
+/* Light mode : signup form input*/
+.custom-lm-container div form#signupBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Light mode : signup form name container */
+.custom-lm-container div form#signupBg div.custom-signup-form-name-container{
+	border: 1px solid rgb(39, 95, 129);
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : signup form name container */
+.custom-lm-container div form#signupBg div.custom-signup-form-name-container-error{
+	border: 1px solid #FF6A00;
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : signup form name container sucess */
+.custom-lm-container div form#signupBg div.custom-signup-form-name-container-success{
+	border: 1px solid #31C600;
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : signup form name container name input */
+.custom-lm-container div form#signupBg div#custom-signup-form-name-container div input#signupClaimLinkShareTXTInput{
+	color: rgb(22, 6, 71);
+	margin-left: -4px;
+}
+
+/* Light mode : signup form signup button */
+.custom-lm-container div form#signupBg input#btnSignup{
+	padding: 12px;
+}
+
+/* Light mode : signup form signup type */
+.custom-lm-container div form#signupBg div.custom-signup-type{
+	border: 1px solid rgb(39, 95, 129);
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : signup form text*/
+.custom-lm-container div form#signupBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+/* Light mode : login form background*/
+.custom-lm-container div form#loginBg{
+	background-color: rgb(246, 251, 238);
+}
+
+/* Light mode : login form label*/
+.custom-lm-container div form#loginBg h1#loginLabel{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : login form input*/
+.custom-lm-container div form#loginBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/* Light mode : login form input*/
+.custom-lm-container div form#loginBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #FF6A00;
+}
+
+.custom-lm-container div form#loginBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #31C600;
+}
+
+/* Light mode : login form input*/
+.custom-lm-container div form#loginBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Light mode : login form login button */
+.custom-lm-container div form#loginBg input#btnLogin{
+	padding: 12px;
+}
+
+/* Light mode : login form signup type */
+.custom-lm-container div form#loginBg div.custom-signup-type{
+	border: 1px solid rgb(39, 95, 129);
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : login form text*/
+.custom-lm-container div form#loginBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+/* Light mode : forgotten password form background*/
+.custom-lm-container div form#forgottenPasswordBg{
+	background-color: rgb(246, 251, 238);
+}
+
+/* Light mode : forgotten password form label*/
+.custom-lm-container div form#forgottenPasswordBg h1#forgottenPasswordLabel{
+	color: rgb(22, 6, 71);
+}
+
+ /* Light mode : forgotten password paragraph */
+ .custom-lm-container div form#forgottenPasswordBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+/* Light mode : forgotten password form input*/
+.custom-lm-container div form#forgottenPasswordBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/* Light mode : forgotten password form input*/
+.custom-lm-container div form#forgottenPasswordBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #FF6A00;
+}
+
+.custom-lm-container div form#forgottenPasswordBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #31C600;
+}
+
+/* Light mode : forgotten password form input*/
+.custom-lm-container div form#forgottenPasswordBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Light mode : confirm email form background*/
+.custom-lm-container div form#confirmEmailBg{
+	background-color: rgb(246, 251, 238);
+}
+
+/* Light mode : confirm email form label*/
+.custom-lm-container div form#confirmEmailBg h1#confirmEmailLabel{
+	color: rgb(22, 6, 71);
+}
+
+ /* Light mode : confirm email paragraph */
+ .custom-lm-container div form#confirmEmailBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+/* Light mode : confirm email form input*/
+.custom-lm-container div form#confirmEmailBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/* Light mode : confirm email form input*/
+.custom-lm-container div form#confirmEmailBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #FF6A00;
+}
+
+.custom-lm-container div form#confirmEmailBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #31C600;
+}
+
+/* Light mode : confirm email form input*/
+.custom-lm-container div form#confirmEmailBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Light mode : change password form background*/
+.custom-lm-container div form#changePasswordBg{
+	background-color: rgb(246, 251, 238);
+}
+
+/* Light mode : change password form label*/
+.custom-lm-container div form#changePasswordBg h1#changePasswordLabel{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : change password form input*/
+.custom-lm-container div form#changePasswordBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+.custom-lm-container div form#changePasswordBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #FF6A00;
+}
+
+.custom-lm-container div form#changePasswordBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	color: rgb(22, 6, 71);
+	border: 1px solid #31C600;
+}
+
+/* Light mode : change password form input*/
+.custom-lm-container div form#changePasswordBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Light mode : notification background*/
+.custom-lm-container div div#notificationBg{
+	background-color: rgb(246, 251, 238);
+}
+
+/* Light mode : notification label*/
+.custom-lm-container div div#notificationBg h1#notificationLabel{
+	color: rgb(22, 6, 71);
+}
+
+/* Light mode : notification paragraph */
+ .custom-lm-container div div#notificationBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dark mode background */
+.custom-dm-container div#mainBg{
+	height: 100vh;
+	background-color: rgb(16, 29, 37);
+}
+
+/* Dark mode : app name */
+.custom-dm-container div#mainBg div table tr td #appName{
+	color: rgb(241, 241, 241);
+}
+
+/* Dark mode: app version */
+.custom-dm-container div#mainBg div table tr td #appVersion{
+	color: rgb(125, 204, 220);
+}
+
+/* Dark mode : theme label color */
+.custom-dm-container div#mainBg div table tr td div label #colorTheme{
+	color: rgb(211, 215, 218);
+}
+
+/* Dark mode : selected language color */
+.custom-dm-container div#mainBg div table tr td div span div span span#selectedLang{
+	color: rgb(211, 215, 218);
+	padding-bottom: 4px;
+	border-bottom: 1px dashed rgb(211, 215, 218);
+}
+
+/* Dark mode : selected language dropdown background color */
+.custom-dm-container div#mainBg div table tr td div span div div#languageToggleDropdown{
+	background-color: rgb(68, 73, 78);
+}
+
+/* Dark mode : selected language dropdown content color */
+.custom-dm-container div#mainBg div table tr td div span div div#languageToggleDropdown span{
+	color: rgb(211, 215, 218);
+}
+
+/* Dark mode : headline color */
+.custom-dm-container div#mainBg div div p#headline{
+	color: rgb(211, 215, 218);
+}
+
+/* Dark mode : number of connections container */
+.custom-dm-container div#mainBg div div div#clientsLabel{
+	color: rgb(211, 215, 218);
+}
+
+/* Dark mode : number of connections label */
+.custom-dm-container div#mainBg div div div span#numConnections{
+	color: rgb(71, 190, 185);
+}
+
+/* Dark mode : rooms name label */
+.custom-dm-container div#mainBg div div div span#roomName{
+	color: rgb(71, 190, 185);
+}
+
+/*Dark mode : claim link sharetxt link*/
+.custom-dm-container div#mainBg div div div div span#claimLinkShareTXT{
+	color: rgb(211, 215, 218);
+}
+
+/*Dark mode : claim link sharetxt input*/
+.custom-dm-container div#mainBg div div div div input#claimLinkShareTXTInput{
+	color: rgb(211, 215, 218);
+	margin-left: -4px;
+}
+
+/* Dark mode : textarea background*/
+.custom-dm-container div#mainBg div div#editorBg{
+	background-color: rgb(35, 45, 54);
+}
+
+/* Dark mode : textarea input field*/
+.custom-dm-container div#mainBg div div div textarea#inputField{
+	color: rgb(211, 215, 218);
+}
+
+/* Dark mode : gotomodal header*/
+.custom-dm-container div div div#gotoHeader{
+	background-color: rgb(0, 176, 156);
+	color: white;
+}
+
+/* Dark mode : gotoBodyBg header*/
+.custom-dm-container div div div#gotoBodyBg{
+	background-color: rgb(35, 45, 54);
+}
+
+/* Dark mode : goto path color*/
+.custom-dm-container div div div#gotoBodyBg table tr td input#pathUrl{
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid rgb(80, 80, 80);
+	color: white;
+}
+
+/* Dark mode : goto button*/
+.custom-dm-container div div div#gotoBodyBg div button#gotoUrl{
+	padding: 8px 16px;
+	background-color: transparent;
+	border: 0;
+	letter-spacing: 2px;
+	color: rgb(71, 190, 185);
+}
+/* Dark mode : goto button hover*/
+.custom-dm-container div div div#gotoBodyBg div button#gotoUrl:hover{
+	cursor: pointer;
+	background-color: rgba(80, 80, 80, 0.4);
+}
+
+/*Dark mode : sign up form background*/
+.custom-dm-container div form#signupBg{
+	background-color: rgb(35, 45, 54);
+}
+
+/*Dark mode : signup form label*/
+.custom-dm-container div form#signupBg h1#signupLabel{
+	color: rgb(211, 215, 218);
+}
+
+/*Dark mode : signup form input*/
+.custom-dm-container div form#signupBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/*Dark mode : signup form input*/
+.custom-dm-container div form#signupBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid #FF6A00;
+}
+
+.custom-dm-container div form#signupBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid #31C600;
+}
+
+
+/*Dark mode : signup form input*/
+.custom-dm-container div form#signupBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Dark mode : signup form name container */
+.custom-dm-container div form#signupBg div.custom-signup-form-name-container{
+	border: 1px solid rgb(39, 95, 129);
+	color: rgb(220, 220, 220);
+}
+
+/* Dark mode : signup form name container */
+.custom-dm-container div form#signupBg div.custom-signup-form-name-container-error{
+	border: 1px solid #FF6A00;
+	color: rgb(220, 220, 220);
+}
+
+/* Dark mode : signup form name container sucess */
+.custom-dm-container div form#signupBg div.custom-signup-form-name-container-success{
+	border: 1px solid #31C600;
+	color: rgb(220, 220, 220);
+}
+
+/* Dark mode : signup form name container name input */
+.custom-dm-container div form#signupBg div#custom-signup-form-name-container div input#signupClaimLinkShareTXTInput{
+	color: rgb(220, 220, 220);
+	margin-left: -4px;
+}
+
+/* Dark mode : signup form signup button */
+.custom-dm-container div form#signupBg input#btnSignup{
+	padding: 12px;
+}
+
+/* Dark mode : signup form signup type */
+.custom-dm-container div form#signupBg div.custom-signup-type{
+	border: 1px solid rgb(39, 95, 129);
+	color: rgb(220, 220, 220);
+}
+
+/* Dark mode : signup form text*/
+.custom-dm-container div form#signupBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+/* Dark mode : login form background*/
+.custom-dm-container div form#loginBg{
+	background-color: rgb(35, 45, 54);
+}
+
+/* Dark mode : login form label*/
+.custom-dm-container div form#loginBg h1#loginLabel{
+	color: rgb(211, 215, 218);
+}
+
+/* Dark mode : login form input*/
+.custom-dm-container div form#loginBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/* Dark mode : login form input*/
+.custom-dm-container div form#loginBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid #FF6A00;
+}
+
+.custom-dm-container div form#loginBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid #31C600;
+}
+
+/* Dark mode : login form input*/
+.custom-dm-container div form#loginBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Dark mode : login form login button */
+.custom-dm-container div form#loginBg input#btnLogin{
+	padding: 12px;
+}
+
+/* Dark mode : login form signup type */
+.custom-dm-container div form#loginBg div.custom-signup-type{
+	border: 1px solid rgb(39, 95, 129);
+	color: rgb(220, 220, 220);
+}
+
+/* Dark mode : login form text*/
+.custom-dm-container div form#loginBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+/* Dark mode : forgotten password form background*/
+.custom-dm-container div form#forgottenPasswordBg{
+	background-color: rgb(35, 45, 54);
+}
+
+/* Dark mode : forgotten password form label*/
+.custom-dm-container div form#forgottenPasswordBg h1#forgottenPasswordLabel{
+	color: rgb(211, 215, 218);
+}
+
+ /* Dark mode : forgotten password paragraph */
+.custom-dm-container div form#forgottenPasswordBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+/* Dark mode : forgotten password form input*/
+.custom-dm-container div form#forgottenPasswordBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/* Dark mode : forgotten password form input*/
+.custom-dm-container div form#forgottenPasswordBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid #FF6A00;
+}
+
+.custom-dm-container div form#forgottenPasswordBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid #31C600;
+}
+
+/* Dark mode : forgotten password form input*/
+.custom-dm-container div form#forgottenPasswordBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Dark mode : confirm email form background*/
+.custom-dm-container div form#confirmEmailBg{
+	background-color: rgb(35, 45, 54);
+}
+
+/* Dark mode : confirm email form label*/
+.custom-dm-container div form#confirmEmailBg h1#confirmEmailLabel{
+	color: rgb(211, 215, 218);
+}
+
+ /* Dark mode : confirm email paragraph */
+.custom-dm-container div form#confirmEmailBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+/* Dark mode : confirm email form input*/
+.custom-dm-container div form#confirmEmailBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/* Dark mode : confirm email form input*/
+.custom-dm-container div form#confirmEmailBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid #FF6A00;
+}
+
+.custom-dm-container div form#confirmEmailBg input.custom-signup-form-input-success{
+	background-color: transparent;
+	border: 1px solid #31C600;
+	color: rgb(220, 220, 220);
+}
+
+/* Dark mode : confirm email form input*/
+.custom-dm-container div form#confirmEmailBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Dark mode : change password form background*/
+.custom-dm-container div form#changePasswordBg{
+	background-color: rgb(35, 45, 54);
+}
+
+/* Dark mode : change password form label*/
+.custom-dm-container div form#changePasswordBg h1#changePasswordLabel{
+	color: rgb(211, 215, 218);
+}
+
+/* Dark mode : change password form input*/
+.custom-dm-container div form#changePasswordBg input.custom-signup-form-input{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid rgb(39, 95, 129);
+}
+
+/* Dark mode : change password form input*/
+.custom-dm-container div form#changePasswordBg input.custom-signup-form-input:focus{
+	border: 1px solid rgb(71, 190, 185);
+}
+
+/* Dark mode : confirm email form input*/
+.custom-dm-container div form#changePasswordBg input.custom-signup-form-input-error{
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+	border: 1px solid #FF6A00;
+}
+
+.custom-dm-container div form#changePasswordBg input.custom-signup-form-input-success{
+	border: 1px solid #31C600;
+	background-color: transparent;
+	color: rgb(220, 220, 220);
+}
+
+/* Dark mode : notification background*/
+.custom-dm-container div div#notificationBg{
+	background-color: rgb(35, 45, 54);
+}
+
+/* Dark mode : notification label*/
+.custom-dm-container div div#notificationBg h1#notificationLabel{
+	color: rgb(211, 215, 218);
+}
+
+/* Dark mode : notification paragraph */
+.custom-dm-container div div#notificationBg div.custom-text{
+	color: rgb(130, 167, 190);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1100px) {
+	.custom-claim-link-container-grid{
+		display: block;
+	}
+	.custom-border-2px-primary{
+		border-left: 2px solid rgb(71, 190, 185);
+		border-top: 2px solid rgb(71, 190, 185);
+		border-right: 2px solid rgb(71, 190, 185);
+		border-bottom: 0;
+	}
+	.custom-my-link-input{
+		width: 60%;
+		width: calc(100% - 125px);
+	}
+	.custom-claim-my-link-btn{
+		padding: 16px;
+	}
+}
+
+
+@media (max-width: 700px) {
+	.custom-responsive-container{
+		padding: 0 16px;
+	}
+	.custom-input-field-container{
+		padding: 16px;
+	}
+	.custom-display-grid{
+		display: block;
+	}
+	.custom-hero-container{
+		height: auto;
+	}
+	.custom-hero-text{
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 32px;
+	}
+	.custom-claim-link-container-grid{
+		display: grid;
+		grid-template-columns: auto 150px;
+		grid-template-rows: auto;
+	}
+	.custom-border-2px-primary{
+		border-left: 2px solid rgb(71, 190, 185);
+		border-top: 2px solid rgb(71, 190, 185);
+		border-bottom: 2px solid rgb(71, 190, 185);
+		border-right: 0;
+	}
+	.custom-my-link-input{
+		width: 60%;
+		width: calc(100% - 120px);
+	}
+	.custom-claim-my-link-btn{
+		padding: 16px;
+	}
+	.custom-claim-link-container-grid{
+		margin-bottom: 16px;
+	}
+}
+
+@media (max-width: 625px) {
+	.custom-icon-size{
+		width: 35px;
+		height: 35px;
+		margin-right: 8px;
+	}
+}
+
+@media (max-width: 500px) {
+	.custom-claim-link-container-grid{
+		display: block;
+	}
+	.custom-border-2px-primary{
+		border-left: 2px solid rgb(71, 190, 185);
+		border-top: 2px solid rgb(71, 190, 185);
+		border-right: 2px solid rgb(71, 190, 185);
+		border-bottom: 0;
+	}
+	.custom-my-link-input{
+		width: 60%;
+	}
+	.custom-claim-my-link-btn{
+		padding: 16px;
+	}
+}
+
+@media (max-width: 400px) {
+	.custom-lm-mode-color, .custom-dm-mode-color{
+		display: none;
+	}
+	.custom-lm-version-color{
+		display: block;
+	}
+	.custom-hero-text{
+		font-size: 20px;
+		margin-top: 16px;
+		width: 80%;
+	}
+	.custom-modal{
+		width: calc(100% - 32px);
+	}
+	.custom-claim-link-container-grid{
+		width: 100%;
+	}
+}
+
