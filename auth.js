@@ -22,57 +22,119 @@ const emailRequest = require('./emailRequest');
 
 // EMAIL
 
-router.post('/email/signup', api.checkIpAddress, (req, res) => {
+// router.post('/email/signup', api.checkIpAddress, (req, res) => {
+//     let email = req.body.email;
+//     let roomName = req.body.roomName;
+//     let password = req.body.password;
+
+//     api.isEmailRegistered(email, response => {
+//         if(response.status == "success"){
+//             if(response.isRegistered){
+//                 res.json({ status: "failed", message: "Email is already registered" });
+//             }else{
+//                 api.isRoomNameRegistered(roomName, response => {
+//                     if(response.status == "success"){
+//                         if(response.isRegistered){
+//                             res.json({ status: "failed", message: `"${roomName}" is already acquired` });
+//                         }else{
+//                             if(password.length < 6){
+//                                 res.json({ status: "failed", message: "Password must be 6 or more characters" });
+//                             }else{
+//                                 let authId = uuidv4().split("-").join("");
+//                                 let magicLink = util.getHostUrl(req) + "/auth/email/signup/callback/" + authId;
+
+//                                 emailRequest.sendMagicLinkEmail(req, email, magicLink, roomName, async isSent => {
+//                                     if (isSent) {
+                                        
+//                                         let expire = Date.now() + (1000 * 60 * 30);    //expire in 30 minutes
+//                                         let authToSave = new AuthModel({
+//                                             authId: authId,
+//                                             email: email,
+//                                             password: password,
+//                                             roomName: roomName,
+//                                             expire: expire
+//                                         });
+                                        
+//                                         try{
+//                                             await authToSave.save();
+//                                             res.json({ status: "success" });
+//                                         }catch(e){
+//                                             res.json({ status: "error", message: e });
+//                                         }
+//                                     }else{
+//                                         res.json({ status: "error", message: `Failed to send email to ${email}. Please check your internet connection.` });
+//                                     }
+//                                 });
+//                             }
+//                         }
+//                     }else{
+//                         res.json({ status: "error" });
+//                     }
+//                 });
+//             }
+//         }else{
+//             res.json({ status: "error" });
+//         }
+//     });
+// });
+
+router.post('/email/signup', api.checkIpAddress, async (req, res) => {
     let email = req.body.email;
     let roomName = req.body.roomName;
     let password = req.body.password;
 
-    api.isEmailRegistered(email, response => {
-        if(response.status == "success"){
-            if(response.isRegistered){
+    api.isEmailRegistered(email, async (response) => {
+        if (response.status == "success") {
+            if (response.isRegistered) {
                 res.json({ status: "failed", message: "Email is already registered" });
-            }else{
-                api.isRoomNameRegistered(roomName, response => {
-                    if(response.status == "success"){
-                        if(response.isRegistered){
+            } else {
+                api.isRoomNameRegistered(roomName, async (response) => {
+                    if (response.status == "success") {
+                        if (response.isRegistered) {
                             res.json({ status: "failed", message: `"${roomName}" is already acquired` });
-                        }else{
-                            if(password.length < 6){
+                        } else {
+                            if (password.length < 6) {
                                 res.json({ status: "failed", message: "Password must be 6 or more characters" });
-                            }else{
-                                let authId = uuidv4().split("-").join("");
-                                let magicLink = util.getHostUrl(req) + "/auth/email/signup/callback/" + authId;
+                            } else {
+                                let userId = uuidv4().split("-").join("");
+                                let sessionId = uuidv4().split("-").join("");
+                                let days = 1000 * 60 * 60 * 24 * 7 * 4; // 1 month for session to expire
+                                let expire = Date.now() + days;
 
-                                emailRequest.sendMagicLinkEmail(req, email, magicLink, roomName, async isSent => {
-                                    if (isSent) {
-                                        
-                                        let expire = Date.now() + (1000 * 60 * 30);    //expire in 30 minutes
-                                        let authToSave = new AuthModel({
-                                            authId: authId,
-                                            email: email,
-                                            password: password,
-                                            roomName: roomName,
-                                            expire: expire
-                                        });
-                                        
-                                        try{
-                                            await authToSave.save();
-                                            res.json({ status: "success" });
-                                        }catch(e){
-                                            res.json({ status: "error", message: e });
-                                        }
-                                    }else{
-                                        res.json({ status: "error", message: `Failed to send email to ${email}. Please check your internet connection.` });
-                                    }
+                                // Create new user
+                                let newUser = new UsersModel({
+                                    authType: "email",
+                                    userId: userId,
+                                    email: email,
+                                    password: password,
+                                    roomName: roomName
                                 });
+
+                                try {
+                                    await newUser.save();
+
+                                    const session = new SessionsModel({
+                                        userId: userId,
+                                        sessionId: sessionId,
+                                        expire: expire
+                                    });
+                                    await session.save();
+
+                                    req.session.user.sessionId = sessionId;
+                                    res.cookie('sharetxtSessionId', sessionId, { maxAge: days, httpOnly: true });
+
+                                    res.json({ status: "success", roomName: roomName });
+                                } catch (e) {
+                                    res.json({ status: "error", message: e });
+                                }
                             }
                         }
-                    }else{
+                    } else {
                         res.json({ status: "error" });
                     }
                 });
             }
-        }else{
+        } else {
             res.json({ status: "error" });
         }
     });
