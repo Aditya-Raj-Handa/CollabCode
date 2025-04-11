@@ -629,8 +629,8 @@ class SignupDialog extends Dialog {
 											.then(json => {
 												if(json.status == "success"){
 													dialogHandler.show(Dialog.NOTIFICATION, {
-														title: "Verification email sent!",
-														message: `An email was sent to you at ${email}. Click the link to verify your email address.`,
+														title: "Account successfully created!",
+														message: `Please refresh the page.`,
 														btnLabel: "PROCEED",
 														onclick: () => {
 															dialogHandler.hide();
